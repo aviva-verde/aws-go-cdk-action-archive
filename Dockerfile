@@ -66,6 +66,7 @@ RUN mkdir -p /tmp && \
 
 ## Install Cloudformation Guard 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/aws-cloudformation/cloudformation-guard/main/install-guard.sh | sh
+ENV PATH "$PATH:/root/.guard/bin/"
 
 # Install eXeCute
 RUN go install github.com/joerdav/xc/cmd/xc@72f8c2aa4fb993b436c9297590f613ed2f24513f
