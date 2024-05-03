@@ -68,6 +68,10 @@ RUN mkdir -p /tmp && \
 RUN curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/aws-cloudformation/cloudformation-guard/main/install-guard.sh | sh
 ENV PATH "$PATH:/root/.guard/bin/"
 
+COPY /cfn-guard.sh /usr/local/bin/cfn-guard/cfn-guard.sh
+RUN chmod +x /usr/local/bin/cfn-guard/cfn-guard.sh
+COPY /ruleguard /usr/local/lib/ruleguard
+
 # Install eXeCute
 RUN go install github.com/joerdav/xc/cmd/xc@72f8c2aa4fb993b436c9297590f613ed2f24513f
 

@@ -1,0 +1,10 @@
+
+let aws_dynamodb_table_resources = Resources.*[ Type == 'AWS::DynamoDB::Table' ]
+rule aws_dynamodb_table when %aws_dynamodb_table_resources !empty {
+ 
+  %aws_dynamodb_table_resources.Properties.DeletionProtectionEnabled == True
+  <<
+  Violation: All DynamoDB Tables must have Delete ProtectION enabled.
+  Fix: Set the dynamodb table property DeletionProtectionEnabled  to true.
+  >>
+}
