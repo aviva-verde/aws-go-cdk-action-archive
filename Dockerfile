@@ -69,7 +69,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/aws-c
 ENV PATH "$PATH:/root/.guard/bin/"
 
 # Install eXeCute
-RUN go install github.com/joerdav/xc/cmd/xc@72f8c2aa4fb993b436c9297590f613ed2f24513f
+RUN go install github.com/joerdav/xc/cmd/xc@f8e8e658978d6c9fe49c27b684ca7375a74deef1
 
 # Install gdiv
 RUN go install github.com/joerdav/gdiv/cmd/gdiv@1ce83542a735a7815d712ed7165e8e4b60a46f77
